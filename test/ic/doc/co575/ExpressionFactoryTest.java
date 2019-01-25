@@ -26,6 +26,7 @@ public class ExpressionFactoryTest {
     }
   }
 
+
   @Test
   public void randomExpression_MaxDepth() {
     final int depth = 5;

@@ -6,7 +6,7 @@ public class NaturalNumber implements Expression {
 
   public NaturalNumber(int val) {
     if (val <= 0) {
-      throw new IllegalArgumentException(val + " is not a natural number (i.e., positive integer)");
+      throw new NonPositiveNumber(val);
     }
     value = val;
   }
@@ -24,5 +24,18 @@ public class NaturalNumber implements Expression {
   @Override
   public int depth() {
     return 0;
+  }
+
+  @Override
+  public boolean equals(Expression e) {
+    if (this.evaluate() == e.evaluate()) return true;
+    else return false;
+  }
+
+  @Override
+  public int compareTo(Expression e) {
+    if (this.evaluate() == e.evaluate()) return 0;
+    else if (this.evaluate() > e.evaluate()) return 1;
+    return -1;
   }
 }
