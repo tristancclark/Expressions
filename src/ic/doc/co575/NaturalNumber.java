@@ -28,14 +28,20 @@ public class NaturalNumber implements Expression {
 
   @Override
   public boolean equals(Expression e) {
-    if (this.evaluate() == e.evaluate()) return true;
-    else return false;
+    if (this.evaluate() == e.evaluate()) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   @Override
   public int compareTo(Expression e) {
-    if (this.evaluate() == e.evaluate()) return 0;
-    else if (this.evaluate() > e.evaluate()) return 1;
+    if (this.evaluate() == e.evaluate()) {
+      return 0;
+    } else if (this.evaluate() > e.evaluate()) {
+      return 1;
+    }
     return -1;
   }
 }
