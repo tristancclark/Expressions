@@ -26,11 +26,7 @@ public abstract class BinaryExpression implements Expression {
 
   @Override
   public boolean equals(Expression e) {
-    if (this.evaluate() == e.evaluate()) {
-      return true;
-    } else {
-      return false;
-    }
+    return this.evaluate() == e.evaluate();
   }
 
   @Override

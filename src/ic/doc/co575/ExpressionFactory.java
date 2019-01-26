@@ -1,6 +1,6 @@
 package ic.doc.co575;
 
-import java.util.*;
+import java.util.Random;
 
 public class ExpressionFactory {
 
@@ -18,7 +18,7 @@ public class ExpressionFactory {
 
     if (randomDepth == 0) {
 
-      int randomNum1 = ran.nextInt(10); //random integer between 0 and 9
+      int randomNum1 = ran.nextInt(9) + 1; //random integer between 1 and 9
       e1 = new NaturalNumber(randomNum1);
       return e1;
 
@@ -37,7 +37,6 @@ public class ExpressionFactory {
             return new Division(e1, e2);
           }
         } catch (InvalidNaturalNumber e) {
-          //System.out.println("Invalid Natural Number, trying again.");
         }
       }
     }

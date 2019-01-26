@@ -1,6 +1,6 @@
 package ic.doc.co575;
 
-import java.util.*;
+import java.util.Arrays;
 
 public class ExpressionArrayFactory {
 
@@ -14,7 +14,7 @@ public class ExpressionArrayFactory {
 
     Expression[] eArray = new Expression[maxSize];
     for (int i = 0; i < maxSize; ++i) {
-      eArray[i] = eFactory.randomExpression(maxDepth);
+      eArray[i] = ExpressionFactory.randomExpression(maxDepth);
     }
     Arrays.sort(eArray);
     return eArray;

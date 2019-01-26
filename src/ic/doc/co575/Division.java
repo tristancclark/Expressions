@@ -25,5 +25,4 @@ public class Division extends BinaryExpression {
         : "(" + rightArgument.toString() + ")";
     return strLeft + "/" + strRight;
   }
-
 }
