@@ -10,13 +10,11 @@ public class ExpressionArrayFactory {
       return null;
     }
 
-    ExpressionFactory eFactory = new ExpressionFactory();
-
-    Expression[] eArray = new Expression[maxSize];
+    Expression[] expressionArray = new Expression[maxSize];
     for (int i = 0; i < maxSize; ++i) {
-      eArray[i] = ExpressionFactory.randomExpression(maxDepth);
+      expressionArray[i] = ExpressionFactory.randomExpression(maxDepth);
     }
-    Arrays.sort(eArray);
-    return eArray;
+    Arrays.sort(expressionArray);
+    return expressionArray;
   }
 }

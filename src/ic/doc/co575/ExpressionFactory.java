@@ -14,19 +14,18 @@ public class ExpressionFactory {
 
     int randomDepth = ran.nextInt(maxDepth + 1); //random integer between 0 and maxDepth
     int randomEx = ran.nextInt(4) + 1; //random integer between 1 and 4
-    Expression e1, e2;
+
 
     if (randomDepth == 0) {
 
       int randomNum1 = ran.nextInt(9) + 1; //random integer between 1 and 9
-      e1 = new NaturalNumber(randomNum1);
-      return e1;
+      return new NaturalNumber(randomNum1);
 
     } else {
       while (true) {
         try {
-          e1 = randomExpression(maxDepth - 1);
-          e2 = randomExpression(maxDepth - 1);
+          Expression e1 = randomExpression(maxDepth - 1);
+          Expression e2 = randomExpression(maxDepth - 1);
           if (randomEx == 1) {
             return new Addition(e1, e2);
           } else if (randomEx == 2) {
@@ -37,6 +36,7 @@ public class ExpressionFactory {
             return new Division(e1, e2);
           }
         } catch (InvalidNaturalNumber e) {
+          System.out.println("Evaluated to invalid natural number, trying again.");
         }
       }
     }
